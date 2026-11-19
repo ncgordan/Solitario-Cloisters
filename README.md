@@ -2,7 +2,7 @@
 
 Solitario web con la baraja medieval **The Cloisters Playing Cards** (también conocida como *Flemish Hunting Deck*, s. XV), hecho con jQuery y jQuery UI.
 
-![Banner](docs/banner.webp)
+![Banner](img/banner.webp)
 
 ## Dónde jugarlo
 
