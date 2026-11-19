@@ -23,19 +23,7 @@
     <link rel="stylesheet" href="css/flemish-hunting-deck.css" />
 
     <style>
-        .ui-state-highlight {
-            background-color: #20b2aa9e;
-        }
 
-        #mazo.mazo-vacio {
-            cursor: pointer;
-        }
-
-        #mazo.mazo-vacio::after {
-            content: "↻";
-            font-size: 5rem;
-            color: #ffffffb0;
-        }
     </style>
 
 </head>
