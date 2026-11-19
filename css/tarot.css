@@ -87,7 +87,9 @@ figure>figcaption {
 
         article{
             display:grid;
-            grid-template-columns: repeat(7, minmax(0, 1fr));
+            /* columnas limitadas también por el alto: las 2 filas caben en pantalla */
+            grid-template-columns: repeat(7, minmax(0, calc((100dvh - 4rem - 3 * var(--gap)) / 4)));
+            justify-content: center;
             /* permite medir el ancho del tablero con cqw */
             container-type: inline-size;
             grid-template-rows: repeat(2, auto);
@@ -129,7 +131,7 @@ figure>figcaption {
             align-items: center;
             border: 0px dashed lightgrey;
             /* alto = alto de la carta (ancho de columna x2, máx. 192px de ancho) + margen */
-            min-height: calc(min((100cqw - 6 * var(--gap)) / 7, 192px) * 2 + 2rem);
+            min-height: calc(min((100cqw - 6 * var(--gap)) / 7, 192px, (100dvh - 4rem - 3 * var(--gap)) / 4) * 2 + 2rem);
             position: relative;
             box-shadow: inset 0px 0px 65px 10px grey;
             border-radius: 1rem;
@@ -142,16 +144,7 @@ figure>figcaption {
             margin: 0 auto;
         }
 
-        .ui-state-highlight {
-            background-color: #20b2aa9e;
-        }
-
-        #mazo.mazo-vacio {
-            cursor: pointer;
-        }
-
-        #mazo.mazo-vacio::after {
-            content: "↻";
-            font-size: 5rem;
-            color: #ffffffb0;
+        /* en el mazo descubierto solo las 2 de arriba llevan sombra (si no, se acumulan) */
+        .displayed-deck > .old-card:not(:nth-last-child(-n+2)){
+            filter: none;
         }

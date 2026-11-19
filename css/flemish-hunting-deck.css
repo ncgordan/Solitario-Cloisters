@@ -41,7 +41,7 @@ LAZOS, ARNESES, CUERNOS y COLLARES
 .old-card-placed,
 .old-card-back{
     width: 100%;
-    min-width: 64px;
+    min-width: 0; /* antes 64px: se salían de la columna en móvil vertical */
     max-width: 192px;
     margin: 0;
     padding: 0;
