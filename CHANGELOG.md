@@ -6,19 +6,28 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+### Añadido
+
+- Variables CSS `--cols` y `--rows` para definir la cuadrícula; el tamaño de los huecos y de las cartas se calcula a partir de ellas.
+- Créditos de los sonidos (Kenney) en el README.
+
 ### Cambiado
 
-- Tablero en cuadrícula de 5×2: arriba el mazo y las 4 pilas de palo; abajo las cartas descubiertas y las columnas.
-- Las columnas pasan de 7 a 4 (como en Canfield), así que las cartas se ven más grandes, sobre todo en móvil vertical.
+- Tablero en cuadrícula de 4×3: arriba las 4 pilas de palo; en medio el mazo, las cartas descubiertas y 2 columnas; abajo 4 columnas.
+- Las columnas pasan de 7 a 6, así que las cartas se ven más grandes, sobre todo en móvil vertical.
 - El hueco de las cartas descubiertas tiene un tono pergamino y un borde discontinuo para distinguirlo de las columnas.
+- `index.php` pasa a llamarse `game.php`; `build.php` genera `index.html` a partir de él, y `index.html` se incluye en el repositorio.
+- README actualizado: tablero, número de columnas, estructura e instalación.
 
 ### Corregido
 
+- Las cartas ya no se salen de sus huecos al cambiar el número de columnas o de filas.
 - Las sombras de los dorsos del mazo ya no se acumulan formando un halo oscuro.
 
 ### Eliminado
 
 - La sección oculta que se usaba como hueco en la fila superior.
+- `.htaccess`: el despliegue en Wasmer no usa Apache.
 
 ## [1.0.0] - 2026-11-19
 

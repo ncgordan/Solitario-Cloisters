@@ -2,11 +2,11 @@
 
 Solitario web con la baraja medieval **The Cloisters Playing Cards** (también conocida como *Flemish Hunting Deck*, s. XV), hecho con jQuery y jQuery UI.
 
-![Portada](./img/portada.webp)
+![Captura](docs/portada.png)
 
 ## Sobre la baraja
 
-Las cartas son las de **The Cloisters Playing Cards** (Países Bajos meridionales, c. 1475–1480), que se conservan en The Met Cloisters de Nueva York. Es la única baraja completa de naipes comunes iluminados del siglo XV que se conoce.
+Las cartas son las de **The Cloisters Playing Cards** (Países Bajos meridionales, c. 1475–1480), que se conservan en The Met Cloisters de Nueva York. Es la única baraja completa de naipes comunes iluminados del siglo XV que se conoce (no es de tarot).
 
 - **4 palos** inspirados en el equipo de caza: cuernos, collares de perro, ataduras de sabueso y lazos de caza.
 - **13 cartas por palo:** rey, reina, sota y diez cartas numéricas, en las que el valor se indica repitiendo el símbolo del palo.
@@ -18,11 +18,19 @@ Las cartas son las de **The Cloisters Playing Cards** (Países Bajos meridionale
 - Arrastrar y soltar cartas (ratón y pantallas táctiles).
 - Mazo con robo aleatorio; cuando se acaba, se recicla con las cartas que no se han colocado.
 - 4 pilas de palo que se completan del uno al rey.
-- 7 columnas en orden descendente y alternando colores.
-- Diseño adaptable: el tablero se ajusta al ancho de la pantalla.
+- 6 columnas en orden descendente y alternando colores (en lugar de las 7 del Klondike).
+- Diseño adaptable en cuadrícula de 4×3: el tablero se ajusta al ancho y al alto de la pantalla.
 - Efectos de sonido al coger y soltar cartas.
 
 ## Reglas
+
+### Tablero
+
+| Fila | Contenido |
+|---|---|
+| 1 | 4 pilas de palo |
+| 2 | Mazo, cartas descubiertas y 2 columnas |
+| 3 | 4 columnas |
 
 ### Palos y colores
 
@@ -51,8 +59,9 @@ Las cartas son las de **The Cloisters Playing Cards** (Países Bajos meridionale
 
 ```
 solitario/
-├── index.php            # Tablero y generación de las 52 cartas
-├── build.php            # Genera index.html estático
+├── game.php             # Tablero y generación de las 52 cartas
+├── build.php            # Genera index.html a partir de game.php
+├── index.html           # Versión estática generada
 ├── css/
 │   ├── normalize.css
 │   ├── tarot.css        # Tablero y diseño
@@ -79,24 +88,22 @@ cd solitario
 php -S localhost:8000
 ```
 
-Abre `http://localhost:8000`.
-
-> El servidor integrado de PHP no comprime ni usa `.htaccess`. Para probar gzip y la caché, usa Apache (por ejemplo, Laragon).
+Abre `http://localhost:8000/game.php` para la versión con PHP, o `http://localhost:8000` para la estática (`index.html`).
 
 ## Versión estática
 
-Para publicarlo sin PHP (GitHub Pages, GitLab Pages, Netlify…), genera `index.html`:
+Para publicarlo sin PHP (GitHub Pages, GitLab Pages, Netlify, Wasmer…), genera `index.html` a partir de `game.php`:
 
 ```bash
 php build.php
 ```
 
-Sube después todo menos `index.php` y `build.php`. Repite el comando cada vez que cambies algo.
+Para el hosting basta con `index.html` y las carpetas `css/`, `js/`, `img/` y `mp3/`. Repite el comando cada vez que cambies `game.php`, el CSS o el JS.
 
 ## Créditos
 
 - **Cartas:** [The Cloisters Playing Cards](https://www.metmuseum.org/art/collection/search/475551), c. 1475–1480. The Metropolitan Museum of Art, The Cloisters Collection, 1983 (n.º 1983.515.1–.52). Imágenes de dominio público del programa Open Access de The Met.
-- **Sonidos:** [Kenney Casino Audio](https://opengameart.org/content/54-casino-sound-effects-cards-dice-chips)
+- **Sonidos:** [Kenney](https://kenney.nl/).
 - **Fondo:** patrón de [Hero Patterns](https://heropatterns.com/) (CC BY 4.0).
 
 ## Licencia

@@ -22,10 +22,6 @@
     <link rel="stylesheet" href="css/tarot.css" />
     <link rel="stylesheet" href="css/flemish-hunting-deck.css" />
 
-    <style>
-
-    </style>
-
 </head>
 
 <body>
