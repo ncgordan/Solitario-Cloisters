@@ -4,6 +4,10 @@ Solitario web con la baraja medieval **The Cloisters Playing Cards** (también c
 
 ![Captura](docs/portada.png)
 
+## Dónde jugarlo
+
+[Solitario Medieval](https://solitario-cloisters.wasmer.app/)
+
 ## Sobre la baraja
 
 Las cartas son las de **The Cloisters Playing Cards** (Países Bajos meridionales, c. 1475–1480), que se conservan en The Met Cloisters de Nueva York. Es la única baraja completa de naipes comunes iluminados del siglo XV que se conoce (no es de tarot).
