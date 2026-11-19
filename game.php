@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="">
+<html lang="es" dir="ltr" class="">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Flemish Hunting Card Game - Solitaire</title>
+    <title>Card Game</title>
     <meta name="title" content="Card Game" />
     <meta name="description" content="" />
     <meta name="author" content="Gordan N. Cajic" />
 
-    <!-- ⚡️ 🥝 🍕 🍉 🌜 🌞 🌚🌵🌷 🍄🦝 🦋 💡 💎 🎁 👽 🤰🏻 🚻 🃏 -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 20 20'><text x='0' y='16'>🃏</text></svg>" />
+    <!-- ⚡️ 🥝 🍕 🍉 🌜 🌞 🌚🌵🌷 🍄🦝 🦋 💡 💎 🎁 👽 🤰🏻 🚻 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 20 20'><text x='0' y='16'>🍄</text></svg>" />
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/tarot.css" />
     <link rel="stylesheet" href="css/flemish-hunting-deck.css" />
+
+    <style>
+        .ui-state-highlight {
+            background-color: #20b2aa9e;
+        }
+
+        #mazo.mazo-vacio {
+            cursor: pointer;
+        }
+
+        #mazo.mazo-vacio::after {
+            content: "↻";
+            font-size: 5rem;
+            color: #ffffffb0;
+        }
+    </style>
+
 </head>
 
 <body>
+
     <article>
         <section id="mazo" class="">
             <?php
@@ -31,16 +54,12 @@
             ?>
         </section>
 
-        <section class="displayed-deck"></section>
-        <section class="" style="visibility: hidden;"></section>
         <section id="ordered-game-nooses" class="droppable-ordered" data-suit="game-nooses"></section>
         <section id="ordered-hound-tethers" class="droppable-ordered" data-suit="hound-tethers"></section>
         <section id="ordered-horns" class="droppable-ordered" data-suit="horns"></section>
         <section id="ordered-dog-collars" class="droppable-ordered" data-suit="dog-collars"></section>
 
-        <section class="droppable"></section>
-        <section class="droppable"></section>
-        <section class="droppable"></section>
+        <section class="displayed-deck" title="Cartas descubiertas"></section>
         <section class="droppable"></section>
         <section class="droppable"></section>
         <section class="droppable"></section>
@@ -68,7 +87,9 @@
         }
 
         ?>
+
     </main>
+
 
     <!-- hay otro solitario que usa jquery, es FreeCell: https://github.com/gitbrent/FreecellJS/-->
     <script src="js/jquery-4.1.0.min.js"></script>
@@ -76,4 +97,5 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/tarot.js"></script>
 </body>
+
 </html>

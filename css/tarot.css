@@ -88,7 +88,7 @@ figure>figcaption {
         article{
             display:grid;
             /* columnas limitadas también por el alto: las 2 filas caben en pantalla */
-            grid-template-columns: repeat(7, minmax(0, calc((100dvh - 4rem - 3 * var(--gap)) / 4)));
+            grid-template-columns: repeat(5, minmax(0, calc((100dvh - 4rem - 3 * var(--gap)) / 4)));
             justify-content: center;
             /* permite medir el ancho del tablero con cqw */
             container-type: inline-size;
@@ -131,7 +131,7 @@ figure>figcaption {
             align-items: center;
             border: 0px dashed lightgrey;
             /* alto = alto de la carta (ancho de columna x2, máx. 192px de ancho) + margen */
-            min-height: calc(min((100cqw - 6 * var(--gap)) / 7, 192px, (100dvh - 4rem - 3 * var(--gap)) / 4) * 2 + 2rem);
+            min-height: calc(min((100cqw - 4 * var(--gap)) / 5, 192px, (100dvh - 4rem - 3 * var(--gap)) / 4) * 2 + 2rem);
             position: relative;
             box-shadow: inset 0px 0px 65px 10px grey;
             border-radius: 1rem;
@@ -148,3 +148,17 @@ figure>figcaption {
         .displayed-deck > .old-card:not(:nth-last-child(-n+2)){
             filter: none;
         }
+
+        /* hueco de cartas descubiertas: tono pergamino y borde discontinuo para no confundirlo con las columnas */
+        article > section.displayed-deck{
+            background-color: #e8d3a866;
+            box-shadow: inset 0px 0px 45px 6px #8b6b3d99;
+            outline: 2px dashed #fff8e7b0;
+            outline-offset: -8px;
+        }
+
+        /* en el mazo solo el dorso de abajo lleva sombra (siempre visible mientras queden cartas) */
+        #mazo .old-card-back:not(:first-of-type){
+            filter: none;
+        }
+
