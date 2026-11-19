@@ -1,0 +1,306 @@
+:root{
+ 
+    --game-nooses: 5.8%;
+    --dog-collars: 34.6%;  
+    --hound-tethers: 64.4%;    
+    --horns: 94%;
+  
+
+    --king:2.25%;
+    --queen:10.4%;
+    --jack:18.2%;
+
+    --ten:26.1%;
+    --nine:34.4%;
+    --eight:42.4%;
+    --seven:50.4%;
+    --six:58.4%;
+
+    --five:66%;
+    --four:74%;
+    --three:81.6%;
+    --two:89.6%;
+    --one:97.4%;
+}
+/****************************************************************************/
+/*  Flemish Hunting Deck:                                                   */
+/****************************************************************************/
+/*
+Flemish Hunting Deck:
+The suits are based on hunting items, consisting of 
+game nooses, 
+hound tethers, 
+horns, 
+and dog collars.
+
+lazos de caza, ataduras de sabueso, cuernos y collares de perro
+LAZOS, ARNESES, CUERNOS y COLLARES
+*/
+
+.old-card,
+.old-card-placed,
+.old-card-back{
+    width: 100%;
+    min-width: 64px;
+    max-width: 192px;
+    margin: 0;
+    padding: 0;
+    border:0px dashed grey;
+    
+}
+
+.old-card > picture,
+.old-card-placed > picture,
+.old-card-back > picture {
+    aspect-ratio: 0.5;
+    background-size: 1380%;
+    max-width: 100%;
+    display: block;
+    border: 0px solid grey;
+    box-sizing: border-box;
+
+}
+/*
+.old-card > picture{
+    cursor:grab;
+}
+
+.old-card-back > picture {
+    cursor:pointer;
+}
+*/
+.old-card-placed{
+   cursor: no-drop!important;
+}
+.old-card-back{
+    cursor:pointer;
+}
+
+.old-card-shadow{
+    filter: drop-shadow(0px 2px 6px black);
+}
+.old-card-dragging-shadow{
+    filter: drop-shadow(0px 42px 52px black);
+}
+.back-card{
+    background: url(../img/oldest-deck-back.webp);
+    background-size: cover!important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/****************************************************************************/
+/*  Game Nooses Suit                                                        */
+/****************************************************************************/
+.king-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--king) var(--game-nooses);
+}
+
+.queen-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--queen) var(--game-nooses);
+}
+
+.jack-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--jack) var(--game-nooses);
+}
+
+.ten-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--ten) var(--game-nooses);
+}
+
+.nine-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--nine) var(--game-nooses);
+}
+
+.eight-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--eight) var(--game-nooses);
+}
+
+.seven-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--seven) var(--game-nooses);
+}
+
+.six-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--six) var(--game-nooses);
+}
+
+.five-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--five) var(--game-nooses);
+}
+
+.four-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--four) var(--game-nooses);
+}
+
+.three-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--three) var(--game-nooses);
+}
+
+.two-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--two) var(--game-nooses);
+}
+
+.one-game-nooses{
+    background: url(../img/oldest-deck.webp) var(--one) var(--game-nooses);
+}
+/****************************************************************************/
+/*  Hound Tethers Suit                                                      */
+/****************************************************************************/
+.king-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--king) var(--hound-tethers);
+}
+
+.queen-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--queen) var(--hound-tethers);
+}
+
+.jack-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--jack) var(--hound-tethers);
+}
+
+.ten-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--ten) var(--hound-tethers);
+}
+
+.nine-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--nine) var(--hound-tethers);
+}
+
+.eight-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--eight) var(--hound-tethers);
+}
+
+.seven-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--seven) var(--hound-tethers);
+}
+
+.six-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--six) var(--hound-tethers);
+}
+
+.five-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--five) var(--hound-tethers);
+}
+
+.four-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--four) var(--hound-tethers);
+}
+
+.three-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--three) var(--hound-tethers);
+}
+
+.two-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--two) var(--hound-tethers);
+}
+
+.one-hound-tethers{
+    background: url(../img/oldest-deck.webp) var(--one) var(--hound-tethers);
+}
+/****************************************************************************/
+/*  Horns Suit                                                              */
+/****************************************************************************/
+.king-horns{
+    background: url(../img/oldest-deck.webp) var(--king) var(--horns);
+}
+
+.queen-horns{
+    background: url(../img/oldest-deck.webp) var(--queen) var(--horns);
+}
+
+.jack-horns{
+    background: url(../img/oldest-deck.webp) var(--jack) var(--horns);
+}
+
+.ten-horns{
+    background: url(../img/oldest-deck.webp) var(--ten) var(--horns);
+}
+
+.nine-horns{
+    background: url(../img/oldest-deck.webp) var(--nine) var(--horns);
+}
+
+.eight-horns{
+    background: url(../img/oldest-deck.webp) var(--eight) var(--horns);
+}
+
+.seven-horns{
+    background: url(../img/oldest-deck.webp) var(--seven) var(--horns);
+}
+
+.six-horns{
+    background: url(../img/oldest-deck.webp) var(--six) var(--horns);
+}
+
+.five-horns{
+    background: url(../img/oldest-deck.webp) var(--five) var(--horns);
+}
+
+.four-horns{
+    background: url(../img/oldest-deck.webp) var(--four) var(--horns);
+}
+
+.three-horns{
+    background: url(../img/oldest-deck.webp) var(--three) var(--horns);
+}
+
+.two-horns{
+    background: url(../img/oldest-deck.webp) var(--two) var(--horns);
+}
+
+.one-horns{
+    background: url(../img/oldest-deck.webp) var(--one) var(--horns);
+}
+/****************************************************************************/
+/*  Dog Collars Suit                                                        */
+/****************************************************************************/
+.king-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--king) var(--dog-collars);
+}
+
+.queen-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--queen) var(--dog-collars);
+}
+
+.jack-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--jack) var(--dog-collars);
+}
+
+.ten-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--ten) var(--dog-collars);
+}
+
+.nine-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--nine) var(--dog-collars);
+}
+
+.eight-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--eight) var(--dog-collars);
+}
+
+.seven-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--seven) var(--dog-collars);
+}
+
+.six-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--six) var(--dog-collars);
+}
+
+.five-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--five) var(--dog-collars);
+}
+
+.four-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--four) var(--dog-collars);
+}
+
+.three-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--three) var(--dog-collars);
+}
+
+.two-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--two) var(--dog-collars);
+}
+
+.one-dog-collars{
+    background: url(../img/oldest-deck.webp) var(--one) var(--dog-collars);
+}
