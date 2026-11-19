@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Flemish Hunting Card Game - Solitaire</title>
+    <meta name="title" content="Card Game" />
+    <meta name="description" content="" />
+    <meta name="author" content="Gordan N. Cajic" />
+
+    <!-- ⚡️ 🥝 🍕 🍉 🌜 🌞 🌚🌵🌷 🍄🦝 🦋 💡 💎 🎁 👽 🤰🏻 🚻 🃏 -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 20 20'><text x='0' y='16'>🃏</text></svg>" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/tarot.css" />
+    <link rel="stylesheet" href="css/flemish-hunting-deck.css" />
+</head>
+
+<body>
+    <article>
+        <section id="mazo" class="">
+            <figure id="old-card-back-1" class="old-card-back old-card-shadow" title="back of the card"
+                style="position:absolute;z-index:0;top:20px;">
+                <picture class="back-card"></picture>
+            </figure>
+            <figure id="old-card-back-2" class="old-card-back old-card-shadow" title="back of the card"
+                style="position:absolute;z-index:1;top:15px;">
+                <picture class="back-card"></picture>
+            </figure>
+            <figure id="old-card-back-3" class="old-card-back old-card-shadow" title="back of the card"
+                style="position:absolute;z-index:2;top:10px;">
+                <picture class="back-card"></picture>
+            </figure>
+            <figure id="old-card-back-4" class="old-card-back old-card-shadow" title="back of the card"
+                style="position:absolute;z-index:3;top:5px;">
+                <picture class="back-card"></picture>
+            </figure>
+            <figure id="old-card-back-5" class="old-card-back old-card-shadow" title="back of the card"
+                style="position:absolute;z-index:4;top:0px;">
+                <picture class="back-card"></picture>
+            </figure>
+        </section>
+
+        <section class="displayed-deck"></section>
+        <section class="" style="visibility: hidden;"></section>
+        <section id="ordered-game-nooses" class="droppable-ordered" data-suit="game-nooses"></section>
+        <section id="ordered-hound-tethers" class="droppable-ordered" data-suit="hound-tethers"></section>
+        <section id="ordered-horns" class="droppable-ordered" data-suit="horns"></section>
+        <section id="ordered-dog-collars" class="droppable-ordered" data-suit="dog-collars"></section>
+
+        <section class="droppable"></section>
+        <section class="droppable"></section>
+        <section class="droppable"></section>
+        <section class="droppable"></section>
+        <section class="droppable"></section>
+        <section class="droppable"></section>
+        <section class="droppable"></section>
+    </article>
+
+    <main class="flex-wrap">
+        <section class="flex-wrap suit-game-nooses">
+            <figure id="card_1" class="old-card old-card-shadow" data-title="one of game nooses"
+                title="one of game nooses">
+                <picture class="one-game-nooses"></picture>
+            </figure>
+            <figure id="card_2" class="old-card old-card-shadow" data-title="two of game nooses"
+                title="two of game nooses">
+                <picture class="two-game-nooses"></picture>
+            </figure>
+            <figure id="card_3" class="old-card old-card-shadow" data-title="three of game nooses"
+                title="three of game nooses">
+                <picture class="three-game-nooses"></picture>
+            </figure>
+            <figure id="card_4" class="old-card old-card-shadow" data-title="four of game nooses"
+                title="four of game nooses">
+                <picture class="four-game-nooses"></picture>
+            </figure>
+            <figure id="card_5" class="old-card old-card-shadow" data-title="five of game nooses"
+                title="five of game nooses">
+                <picture class="five-game-nooses"></picture>
+            </figure>
+            <figure id="card_6" class="old-card old-card-shadow" data-title="six of game nooses"
+                title="six of game nooses">
+                <picture class="six-game-nooses"></picture>
+            </figure>
+            <figure id="card_7" class="old-card old-card-shadow" data-title="seven of game nooses"
+                title="seven of game nooses">
+                <picture class="seven-game-nooses"></picture>
+            </figure>
+            <figure id="card_8" class="old-card old-card-shadow" data-title="eight of game nooses"
+                title="eight of game nooses">
+                <picture class="eight-game-nooses"></picture>
+            </figure>
+            <figure id="card_9" class="old-card old-card-shadow" data-title="nine of game nooses"
+                title="nine of game nooses">
+                <picture class="nine-game-nooses"></picture>
+            </figure>
+            <figure id="card_10" class="old-card old-card-shadow" data-title="ten of game nooses"
+                title="ten of game nooses">
+                <picture class="ten-game-nooses"></picture>
+            </figure>
+            <figure id="card_11" class="old-card old-card-shadow" data-title="jack of game nooses"
+                title="jack of game nooses">
+                <picture class="jack-game-nooses"></picture>
+            </figure>
+            <figure id="card_12" class="old-card old-card-shadow" data-title="queen of game nooses"
+                title="queen of game nooses">
+                <picture class="queen-game-nooses"></picture>
+            </figure>
+            <figure id="card_13" class="old-card old-card-shadow" data-title="king of game nooses"
+                title="king of game nooses">
+                <picture class="king-game-nooses"></picture>
+            </figure>
+        </section>
+        <section class="flex-wrap suit-hound-tethers">
+            <figure id="card_14" class="old-card old-card-shadow" data-title="one of hound tethers"
+                title="one of hound tethers">
+                <picture class="one-hound-tethers"></picture>
+            </figure>
+            <figure id="card_15" class="old-card old-card-shadow" data-title="two of hound tethers"
+                title="two of hound tethers">
+                <picture class="two-hound-tethers"></picture>
+            </figure>
+            <figure id="card_16" class="old-card old-card-shadow" data-title="three of hound tethers"
+                title="three of hound tethers">
+                <picture class="three-hound-tethers"></picture>
+            </figure>
+            <figure id="card_17" class="old-card old-card-shadow" data-title="four of hound tethers"
+                title="four of hound tethers">
+                <picture class="four-hound-tethers"></picture>
+            </figure>
+            <figure id="card_18" class="old-card old-card-shadow" data-title="five of hound tethers"
+                title="five of hound tethers">
+                <picture class="five-hound-tethers"></picture>
+            </figure>
+            <figure id="card_19" class="old-card old-card-shadow" data-title="six of hound tethers"
+                title="six of hound tethers">
+                <picture class="six-hound-tethers"></picture>
+            </figure>
+            <figure id="card_20" class="old-card old-card-shadow" data-title="seven of hound tethers"
+                title="seven of hound tethers">
+                <picture class="seven-hound-tethers"></picture>
+            </figure>
+            <figure id="card_21" class="old-card old-card-shadow" data-title="eight of hound tethers"
+                title="eight of hound tethers">
+                <picture class="eight-hound-tethers"></picture>
+            </figure>
+            <figure id="card_22" class="old-card old-card-shadow" data-title="nine of hound tethers"
+                title="nine of hound tethers">
+                <picture class="nine-hound-tethers"></picture>
+            </figure>
+            <figure id="card_23" class="old-card old-card-shadow" data-title="ten of hound tethers"
+                title="ten of hound tethers">
+                <picture class="ten-hound-tethers"></picture>
+            </figure>
+            <figure id="card_24" class="old-card old-card-shadow" data-title="jack of hound tethers"
+                title="jack of hound tethers">
+                <picture class="jack-hound-tethers"></picture>
+            </figure>
+            <figure id="card_25" class="old-card old-card-shadow" data-title="queen of hound tethers"
+                title="queen of hound tethers">
+                <picture class="queen-hound-tethers"></picture>
+            </figure>
+            <figure id="card_26" class="old-card old-card-shadow" data-title="king of hound tethers"
+                title="king of hound tethers">
+                <picture class="king-hound-tethers"></picture>
+            </figure>
+        </section>
+        <section class="flex-wrap suit-horns">
+            <figure id="card_27" class="old-card old-card-shadow" data-title="one of horns" title="one of horns">
+                <picture class="one-horns"></picture>
+            </figure>
+            <figure id="card_28" class="old-card old-card-shadow" data-title="two of horns" title="two of horns">
+                <picture class="two-horns"></picture>
+            </figure>
+            <figure id="card_29" class="old-card old-card-shadow" data-title="three of horns" title="three of horns">
+                <picture class="three-horns"></picture>
+            </figure>
+            <figure id="card_30" class="old-card old-card-shadow" data-title="four of horns" title="four of horns">
+                <picture class="four-horns"></picture>
+            </figure>
+            <figure id="card_31" class="old-card old-card-shadow" data-title="five of horns" title="five of horns">
+                <picture class="five-horns"></picture>
+            </figure>
+            <figure id="card_32" class="old-card old-card-shadow" data-title="six of horns" title="six of horns">
+                <picture class="six-horns"></picture>
+            </figure>
+            <figure id="card_33" class="old-card old-card-shadow" data-title="seven of horns" title="seven of horns">
+                <picture class="seven-horns"></picture>
+            </figure>
+            <figure id="card_34" class="old-card old-card-shadow" data-title="eight of horns" title="eight of horns">
+                <picture class="eight-horns"></picture>
+            </figure>
+            <figure id="card_35" class="old-card old-card-shadow" data-title="nine of horns" title="nine of horns">
+                <picture class="nine-horns"></picture>
+            </figure>
+            <figure id="card_36" class="old-card old-card-shadow" data-title="ten of horns" title="ten of horns">
+                <picture class="ten-horns"></picture>
+            </figure>
+            <figure id="card_37" class="old-card old-card-shadow" data-title="jack of horns" title="jack of horns">
+                <picture class="jack-horns"></picture>
+            </figure>
+            <figure id="card_38" class="old-card old-card-shadow" data-title="queen of horns" title="queen of horns">
+                <picture class="queen-horns"></picture>
+            </figure>
+            <figure id="card_39" class="old-card old-card-shadow" data-title="king of horns" title="king of horns">
+                <picture class="king-horns"></picture>
+            </figure>
+        </section>
+        <section class="flex-wrap suit-dog-collars">
+            <figure id="card_40" class="old-card old-card-shadow" data-title="one of dog collars"
+                title="one of dog collars">
+                <picture class="one-dog-collars"></picture>
+            </figure>
+            <figure id="card_41" class="old-card old-card-shadow" data-title="two of dog collars"
+                title="two of dog collars">
+                <picture class="two-dog-collars"></picture>
+            </figure>
+            <figure id="card_42" class="old-card old-card-shadow" data-title="three of dog collars"
+                title="three of dog collars">
+                <picture class="three-dog-collars"></picture>
+            </figure>
+            <figure id="card_43" class="old-card old-card-shadow" data-title="four of dog collars"
+                title="four of dog collars">
+                <picture class="four-dog-collars"></picture>
+            </figure>
+            <figure id="card_44" class="old-card old-card-shadow" data-title="five of dog collars"
+                title="five of dog collars">
+                <picture class="five-dog-collars"></picture>
+            </figure>
+            <figure id="card_45" class="old-card old-card-shadow" data-title="six of dog collars"
+                title="six of dog collars">
+                <picture class="six-dog-collars"></picture>
+            </figure>
+            <figure id="card_46" class="old-card old-card-shadow" data-title="seven of dog collars"
+                title="seven of dog collars">
+                <picture class="seven-dog-collars"></picture>
+            </figure>
+            <figure id="card_47" class="old-card old-card-shadow" data-title="eight of dog collars"
+                title="eight of dog collars">
+                <picture class="eight-dog-collars"></picture>
+            </figure>
+            <figure id="card_48" class="old-card old-card-shadow" data-title="nine of dog collars"
+                title="nine of dog collars">
+                <picture class="nine-dog-collars"></picture>
+            </figure>
+            <figure id="card_49" class="old-card old-card-shadow" data-title="ten of dog collars"
+                title="ten of dog collars">
+                <picture class="ten-dog-collars"></picture>
+            </figure>
+            <figure id="card_50" class="old-card old-card-shadow" data-title="jack of dog collars"
+                title="jack of dog collars">
+                <picture class="jack-dog-collars"></picture>
+            </figure>
+            <figure id="card_51" class="old-card old-card-shadow" data-title="queen of dog collars"
+                title="queen of dog collars">
+                <picture class="queen-dog-collars"></picture>
+            </figure>
+            <figure id="card_52" class="old-card old-card-shadow" data-title="king of dog collars"
+                title="king of dog collars">
+                <picture class="king-dog-collars"></picture>
+            </figure>
+        </section>
+    </main>
+
+    <!-- hay otro solitario que usa jquery, es FreeCell: https://github.com/gitbrent/FreecellJS/-->
+    <script src="js/jquery-4.1.0.min.js"></script>
+    <script src="js/jquery-ui-1.14.2.custom.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/tarot.js"></script>
+</body>
+
+</html>
