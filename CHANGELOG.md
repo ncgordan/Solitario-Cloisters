@@ -6,6 +6,12 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
+## [1.1.0] - 2026-11-19
+
+### Añadido
+
+Opción para diestros y zurdos: con direction: rtl en el tablero, la cuadrícula se pinta al revés y el mazo pasa a la derecha. Es una opción con un botón en la esquina inferior derecha, para que cada jugador elija
+
 ## [1.0.0] - 2026-11-19
 
 Primera versión publicada.

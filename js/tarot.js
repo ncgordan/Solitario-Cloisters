@@ -8,9 +8,24 @@ function getRandomArbitrary(min, max) {
     return parseInt(Math.random() * (max - min) + min);
 }
 
+function modo_diestro_zurdo(){
+    // Modo diestro por defecto; se guarda la elección del jugador
+    let diestro = true;
+    try { diestro = localStorage.getItem('mano') !== 'zurdo'; } catch (e) {}
+    $('body').toggleClass('diestro', diestro);
+
+    $('#mano').on('click', function () {
+        diestro = !diestro;
+        $('body').toggleClass('diestro', diestro);
+        try { localStorage.setItem('mano', diestro ? 'diestro' : 'zurdo'); } catch (e) {}
+    });
+}
+
 $(document).ready(function () {
     let z_index = 10;
 
+    modo_diestro_zurdo();
+    
     var tapCard = document.createElement('audio');
     tapCard.controls = true;
     tapCard.src = 'mp3/Deal-Single.mp3';

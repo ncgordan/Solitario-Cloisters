@@ -76,7 +76,8 @@
 
     </main>
 
-
+    <button id="mano" type="button" title="Cambiar a modo zurdo/diestro">⇄</button>
+    
     <!-- hay otro solitario que usa jquery, es FreeCell: https://github.com/gitbrent/FreecellJS/-->
     <script src="js/jquery-4.1.0.min.js"></script>
     <script src="js/jquery-ui-1.14.2.custom.min.js"></script>
