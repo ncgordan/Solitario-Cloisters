@@ -53,7 +53,6 @@ Las cartas son las de **The Cloisters Playing Cards** (Países Bajos meridionale
 solitario/
 ├── index.php            # Tablero y generación de las 52 cartas
 ├── build.php            # Genera index.html estático
-├── .htaccess            # Compresión gzip y caché
 ├── css/
 │   ├── normalize.css
 │   ├── tarot.css        # Tablero y diseño
