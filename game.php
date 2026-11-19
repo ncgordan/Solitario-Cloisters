@@ -43,6 +43,11 @@
 <body>
 
     <article>
+        <section id="ordered-game-nooses" class="droppable-ordered" data-suit="game-nooses"></section>
+        <section id="ordered-hound-tethers" class="droppable-ordered" data-suit="hound-tethers"></section>
+        <section id="ordered-horns" class="droppable-ordered" data-suit="horns"></section>
+        <section id="ordered-dog-collars" class="droppable-ordered" data-suit="dog-collars"></section>
+
         <section id="mazo" class="">
             <?php
             $remaining_cards = 5;
@@ -53,13 +58,10 @@
             }
             ?>
         </section>
-
-        <section id="ordered-game-nooses" class="droppable-ordered" data-suit="game-nooses"></section>
-        <section id="ordered-hound-tethers" class="droppable-ordered" data-suit="hound-tethers"></section>
-        <section id="ordered-horns" class="droppable-ordered" data-suit="horns"></section>
-        <section id="ordered-dog-collars" class="droppable-ordered" data-suit="dog-collars"></section>
-
         <section class="displayed-deck" title="Cartas descubiertas"></section>
+        <section class="droppable"></section>
+        <section class="droppable"></section>
+
         <section class="droppable"></section>
         <section class="droppable"></section>
         <section class="droppable"></section>

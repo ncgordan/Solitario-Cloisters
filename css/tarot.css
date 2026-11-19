@@ -124,6 +124,14 @@ figure>figcaption {
         {
             filter: grayscale(1);
         }
+        article{
+            --cols: 4;
+            --rows: 3;
+            /* ancho máximo de carta para que quepan todas las filas en el alto */
+            --card-max-h: calc((100dvh - var(--rows) * 2rem - (var(--rows) + 1) * var(--gap)) / (2 * var(--rows)));
+            grid-template-columns: repeat(var(--cols), minmax(0, var(--card-max-h)));
+            grid-template-rows: repeat(var(--rows), auto);
+        }
         article > section{
             display: flex;
             flex-flow: column;
@@ -131,7 +139,7 @@ figure>figcaption {
             align-items: center;
             border: 0px dashed lightgrey;
             /* alto = alto de la carta (ancho de columna x2, máx. 192px de ancho) + margen */
-            min-height: calc(min((100cqw - 4 * var(--gap)) / 5, 192px, (100dvh - 4rem - 3 * var(--gap)) / 4) * 2 + 2rem);
+            min-height: calc(min((100cqw - (var(--cols) - 1) * var(--gap)) / var(--cols), 192px, var(--card-max-h)) * 2 + 2rem);
             position: relative;
             box-shadow: inset 0px 0px 65px 10px grey;
             border-radius: 1rem;
