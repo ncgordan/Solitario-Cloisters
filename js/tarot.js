@@ -21,6 +21,17 @@ function modo_diestro_zurdo(){
     });
 }
 
+// Modo depuración: añade ?debug a la URL
+if (new URLSearchParams(location.search).has('debug')) {
+    $('body').addClass('debug');
+    $(document).on('mousemove touchstart touchmove', function (e) {
+        const p = e.touches ? e.touches[0] : e;
+        const carta = $(document.elementFromPoint(p.clientX, p.clientY)).closest('.old-card');
+        $('.debug-hit').not(carta).removeClass('debug-hit');
+        carta.addClass('debug-hit');
+    });
+}
+
 $(document).ready(function () {
     let z_index = 10;
 
@@ -80,11 +91,21 @@ $(document).ready(function () {
 
     // Muestra tantos dorsos como cartas queden (máx. 5) y marca el mazo vacío
     function actualizarMazo() {
+        /*
         let n = remaining_deck_of_cards.length;
         $(".old-card-back").each(function (i) {
             $(this).toggle(i < n);
         });
         $("#mazo").toggleClass("mazo-vacio", n === 0);
+        */
+        let n = remaining_deck_of_cards.length;
+        let hayDescubiertas = $(".displayed-deck > .old-card").length > 0;
+        $(".old-card-back").each(function (i) {
+            $(this).toggle(i < n);
+        });
+        $("#mazo")
+            .toggleClass("mazo-vacio", n === 0 && hayDescubiertas)
+            .toggleClass("mazo-agotado", n === 0 && !hayDescubiertas);
     }
 
     // Devuelve bocabajo al mazo las cartas que siguen en .displayed-deck
@@ -155,7 +176,14 @@ $(document).ready(function () {
     // Fix out-of-containment glitch
     // $($drag.draggable('option').containment).on('mouseleave', () => $drag.trigger('mouseup')); 
 
+    const ESCALON = matchMedia('(pointer: coarse)').matches ? '30%' : '20%';
+    //const ESCALON_PALO = matchMedia('(pointer: coarse)').matches ? '17%' : '7%';
     let arr_card_number_names = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'jack', 'queen', 'king'];
+
+
+    $('.droppable .old-card').each((i, f) => console.log(
+        f.id, '|', f.style.cssText, '| figure:', Math.round(f.getBoundingClientRect().height),
+        '| picture:', Math.round(f.querySelector('picture').getBoundingClientRect().height)));
 
     $(".droppable-ordered").droppable({
         accept: function (drag) {
@@ -211,10 +239,9 @@ $(document).ready(function () {
             var cardsInColumn = column.find('.old-card-placed');
             //console.log("cardsInColumn: ", cardsInColumn.length);
             var n_cards = cardsInColumn.length;
-            var top_position = 15;
-            if (n_cards >= 1) {
-                top_position = top_position + (3 * n_cards);
-            }
+            
+            var top_position = (3 * n_cards) + 'px';
+            
             if (n_cards > 11) {// >1 deja 3 cartas dentro. 
                 $(this).droppable("disable");
             }
@@ -334,7 +361,7 @@ $(document).ready(function () {
                     .appendTo(cardsInColumn.last());
 
                 card.css({
-                    top: '17%', // proporcional al alto de la carta
+                    top: ESCALON, // proporcional al alto de la carta
                     left: 'unset',
 
                 });

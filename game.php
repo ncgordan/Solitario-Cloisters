@@ -13,11 +13,6 @@
     <!-- ⚡️ 🥝 🍕 🍉 🌜 🌞 🌚🌵🌷 🍄🦝 🦋 💡 💎 🎁 👽 🤰🏻 🚻 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 20 20'><text x='0' y='16'>🍄</text></svg>" />
 
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/tarot.css" />
     <link rel="stylesheet" href="css/flemish-hunting-deck.css" />
@@ -43,13 +38,13 @@
             ?>
         </section>
         <section class="displayed-deck" title="Cartas descubiertas"></section>
-        <section class="droppable"></section>
-        <section class="droppable"></section>
+        <section id="columna-1"  class="droppable"></section>
+        <section id="columna-2"  class="droppable"></section>
 
-        <section class="droppable"></section>
-        <section class="droppable"></section>
-        <section class="droppable"></section>
-        <section class="droppable"></section>
+        <section id="columna-3"  class="droppable"></section>
+        <section id="columna-4"  class="droppable"></section>
+        <section id="columna-5"  class="droppable"></section>
+        <section id="columna-6"  class="droppable"></section>
     </article>
 
     <main class="flex-wrap">
@@ -64,16 +59,17 @@
             $suit_name = $arr_suit[$suit];
             $suit_classname =  $arr_suit_class[$suit];
             print '<section class="flex-wrap suit-' . $suit_classname . '">';
+            
             for ($card = 0; $card < 13; $card++) {
                 $id_card++;
                 $card_name = $arr_cards[$card];
                 print '<figure id="card_' . $id_card . '" class="old-card old-card-shadow" data-title="' . $card_name . ' of ' . $suit_name . '" title="' . $card_name . ' of ' . $suit_name . '" ><picture class="' . $card_name . '-' . $suit_classname . '" ></picture></figure>';
             }
+
             print '</section>';
         }
 
         ?>
-
     </main>
 
     <button id="mano" type="button" title="Cambiar a modo zurdo/diestro">⇄</button>

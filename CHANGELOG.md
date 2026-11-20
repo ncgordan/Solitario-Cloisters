@@ -6,11 +6,26 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ## [Sin publicar]
 
-## [1.1.0] - 2026-11-19
+## [1.1.0] - 2026-11-20
 
 ### Añadido
 
-Opción para diestros y zurdos: con direction: rtl en el tablero, la cuadrícula se pinta al revés y el mazo pasa a la derecha. Es una opción con un botón en la esquina inferior derecha, para que cada jugador elija
+- Modo diestro y zurdo: el botón ⇄ refleja el tablero (mazo a la derecha o a la izquierda) y la elección se guarda en el navegador.
+- Modo de depuración con `?debug` en la URL: muestra el borde de cada carta y resalta la que se agarraría bajo el puntero.
+
+### Cambiado
+
+- El tablero cambia según la orientación: 4×3 en vertical y 6×2 en horizontal, con `grid-template-areas`; las columnas tienen `id` (`columna-1` … `columna-6`).
+- Sprite rehecho en una cuadrícula exacta de 13×4 celdas en proporción 1:2; las posiciones de las cartas son exactas en lugar de ajustadas a mano.
+- Escalera de las columnas más separada en pantallas táctiles, para poder agarrar mejor las cartas tapadas.
+- Las pilas de palo bajan solo 2px por carta, para que el montón no se salga del hueco.
+
+### Corregido
+
+- La zona de agarre de las cartas no coincidía con el dibujo.
+- La carta descubierta quedaba demasiado baja en su hueco.
+- La separación de las cartas en las pilas de palo no se aplicaba (se concatenaba texto en lugar de sumar).
+- En el diseño horizontal, la sexta columna quedaba con ancho 0 y no se veía.
 
 ## [1.0.0] - 2026-11-19
 

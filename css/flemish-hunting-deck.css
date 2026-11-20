@@ -1,5 +1,5 @@
 :root{
- 
+ /*
     --game-nooses: 5.8%;
     --dog-collars: 34.6%;  
     --hound-tethers: 64.4%;    
@@ -21,6 +21,27 @@
     --three:81.6%;
     --two:89.6%;
     --one:97.4%;
+    */
+    --game-nooses: 1.4%;
+    --hound-tethers: 34%;
+    --horns: 67.8%;
+    --dog-collars: 101.4%;
+
+    --one: 0%;
+    --two: 8.333%;
+    --three: 16.667%;
+    --four: 25%;
+    --five: 33.333%;
+    --six: 41.667%;
+    --seven: 50%;
+    --eight: 58.333%;
+    --nine: 66.667%;
+    --ten: 75%;
+
+    --jack: 83.333%;
+    --queen: 91.667%;
+    --king: 100%;
+
 }
 /****************************************************************************/
 /*  Flemish Hunting Deck:                                                   */
@@ -45,21 +66,38 @@ LAZOS, ARNESES, CUERNOS y COLLARES
     max-width: 192px;
     margin: 0;
     padding: 0;
-    border:0px dashed grey;
-    
+    border:0px dashed grey;    
 }
 
 .old-card > picture,
 .old-card-placed > picture,
 .old-card-back > picture {
     aspect-ratio: 0.5;
-    background-size: 1380%;
+  
+    background-size: 1300% 400%;
     max-width: 100%;
     display: block;
     border: 0px solid grey;
     box-sizing: border-box;
 
 }
+
+
+/*
+.old-card > picture,
+.old-card-placed > picture,
+.old-card-back > picture{
+    aspect-ratio: 0.5;
+    background-image: url(../img/oldest-deck-grid.webp);
+    background-size: 1300% 400%;
+    background-position: calc(var(--col) / 12 * 100%) calc(var(--fila) / 3 * 100%);
+
+    max-width: 100%;
+    display: block;
+    border: 0px solid grey;
+    box-sizing: border-box;
+}
+    */
 /*
 .old-card > picture{
     cursor:grab;
@@ -91,6 +129,7 @@ LAZOS, ARNESES, CUERNOS y COLLARES
 /****************************************************************************/
 /*  Game Nooses Suit                                                        */
 /****************************************************************************/
+
 .king-game-nooses{
     background: url(../img/oldest-deck.webp) var(--king) var(--game-nooses);
 }
@@ -142,9 +181,11 @@ LAZOS, ARNESES, CUERNOS y COLLARES
 .one-game-nooses{
     background: url(../img/oldest-deck.webp) var(--one) var(--game-nooses);
 }
+
 /****************************************************************************/
 /*  Hound Tethers Suit                                                      */
 /****************************************************************************/
+
 .king-hound-tethers{
     background: url(../img/oldest-deck.webp) var(--king) var(--hound-tethers);
 }
@@ -196,9 +237,11 @@ LAZOS, ARNESES, CUERNOS y COLLARES
 .one-hound-tethers{
     background: url(../img/oldest-deck.webp) var(--one) var(--hound-tethers);
 }
+    
 /****************************************************************************/
 /*  Horns Suit                                                              */
 /****************************************************************************/
+
 .king-horns{
     background: url(../img/oldest-deck.webp) var(--king) var(--horns);
 }
@@ -250,9 +293,11 @@ LAZOS, ARNESES, CUERNOS y COLLARES
 .one-horns{
     background: url(../img/oldest-deck.webp) var(--one) var(--horns);
 }
+ 
 /****************************************************************************/
 /*  Dog Collars Suit                                                        */
 /****************************************************************************/
+
 .king-dog-collars{
     background: url(../img/oldest-deck.webp) var(--king) var(--dog-collars);
 }
@@ -304,3 +349,4 @@ LAZOS, ARNESES, CUERNOS y COLLARES
 .one-dog-collars{
     background: url(../img/oldest-deck.webp) var(--one) var(--dog-collars);
 }
+ 

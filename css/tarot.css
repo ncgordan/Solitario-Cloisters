@@ -100,7 +100,10 @@ figure>figcaption {
 article {
     display: grid;
     /* columnas limitadas también por el alto: las 2 filas caben en pantalla */
-    grid-template-columns: repeat(5, minmax(0, calc((100dvh - 4rem - 3 * var(--gap)) / 4)));
+    /*
+    grid-template-columns: repeat(var(--cols), minmax(0, calc((100dvh - 4rem - 3 * var(--gap)) / 4)));
+ */
+ grid-auto-columns: minmax(0, var(--card-max-h));
     justify-content: center;
     /* permite medir el ancho del tablero con cqw */
     container-type: inline-size;
@@ -137,17 +140,50 @@ article {
 #ordered-hound-tethers,
 #ordered-horns,
 #ordered-dog-collars {
-    filter: grayscale(1);
+    filter: grayscale(0.75);
 }
-
+/*
 article {
     --cols: 4;
     --rows: 3;
-    /* ancho máximo de carta para que quepan todas las filas en el alto */
+    
     --card-max-h: calc((100dvh - var(--rows) * 2rem - (var(--rows) + 1) * var(--gap)) / (2 * var(--rows)));
     grid-template-columns: repeat(var(--cols), minmax(0, var(--card-max-h)));
     grid-template-rows: repeat(var(--rows), auto);
 }
+*/
+/* vertical (móvil): 4×3 */
+article {
+    --card-max-h: calc((100dvh - var(--rows) * 2rem - (var(--rows) + 1) * var(--gap)) / (2 * var(--rows)));
+
+    --cols: 4;
+    --rows: 3;
+    grid-template-areas:
+        "p1   p2   p3 p4"
+        "mazo desc c1 c2"
+        "c3   c4   c5 c6";
+}
+
+/* horizontal (ordenador, móvil girado): 6×2, como un Klondike clásico */
+@media (orientation: landscape) {
+    article {
+        --cols: 6;
+        --rows: 2;
+        grid-template-areas:
+            "mazo desc p1 p2 p3 p4"
+            "c1   c2   c3 c4 c5 c6";
+    }
+}
+
+#mazo                 { grid-area: mazo; box-shadow: none; background-color: transparent;}
+.displayed-deck       { grid-area: desc; }
+#ordered-game-nooses  { grid-area: p1; }
+#ordered-hound-tethers{ grid-area: p2; }
+#ordered-horns        { grid-area: p3; }
+#ordered-dog-collars  { grid-area: p4; }
+#columna-1 { grid-area: c1; }  #columna-2 { grid-area: c2; }
+#columna-3 { grid-area: c3; }  #columna-4 { grid-area: c4; }
+#columna-5 { grid-area: c5; }  #columna-6 { grid-area: c6; }
 
 article>section {
     display: flex;
@@ -158,12 +194,17 @@ article>section {
     /* alto = alto de la carta (ancho de columna x2, máx. 192px de ancho) + margen */
     min-height: calc(min((100cqw - (var(--cols) - 1) * var(--gap)) / var(--cols), 192px, var(--card-max-h)) * 2 + 2rem);
     position: relative;
-    box-shadow: inset 0px 0px 65px 10px grey;
+
+    box-shadow:
+    inset 0px 2px 26px 3px rgba(0, 0, 0, 0.64),
+    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.06);
+
+
     border-radius: 1rem;
     background-size: 165% !important;
     background-position: 47% !important;
     background-repeat: no-repeat !important;
-    background-color: #f5f5dc4f;
+    background-color: #0000004f;
 }
 
 article>section>figure {
@@ -177,10 +218,14 @@ article>section>figure {
 
 /* hueco de cartas descubiertas: tono pergamino y borde discontinuo para no confundirlo con las columnas */
 article>section.displayed-deck {
+    /*
     background-color: #e8d3a866;
     box-shadow: inset 0px 0px 45px 6px #8b6b3d99;
     outline: 2px dashed #fff8e7b0;
     outline-offset: -8px;
+    */
+    box-shadow: none;
+    background-color: transparent;
 }
 
 /* en el mazo solo el dorso de abajo lleva sombra (siempre visible mientras queden cartas) */
@@ -210,4 +255,16 @@ article > section { direction: ltr; }
     position: fixed; right: .5rem; bottom: .5rem; z-index: 3000;
     width: 2.5rem; height: 2.5rem; border: 0; border-radius: 50%;
     font-size: 1.4rem; background: #ffffffb0; cursor: pointer;
+}
+
+/* depuración: bordes de cada carta y carta bajo el puntero */
+
+body.debug .old-card { outline: 2px dashed #ff00ff; outline-offset: -2px; }
+body.debug .old-card.debug-hit { box-shadow: inset 0 0 0 9999px #ff00ff55; }
+
+#mazo.mazo-agotado { cursor: default; }
+#mazo.mazo-agotado::after {
+    content: "✕";
+    font-size: 5rem;
+    color: #ffffff80;
 }
